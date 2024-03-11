@@ -18,6 +18,10 @@ public class InputValidator {
         String phoneNumber = inputData[4];
         String gender = inputData[5];
 
+        if (!birthDate.matches("\\d{2}\\.\\d{2}\\.\\d{4}")) {
+            throw new InvalidInputException("Неверный формат даты рождения. Дата рождения должна быть в формате ДД.ММ.ГГГГ");
+        }
+
         if (!phoneNumber.matches("\\d+")) {
             throw new InvalidInputException("Неверный формат номера телефона. Номер должен содержать только цифры");
         }
